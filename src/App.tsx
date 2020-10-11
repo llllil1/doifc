@@ -1,46 +1,23 @@
-import React, { useState } from 'react';
-import { Button, Icon, ButtonGroup, Dialog } from 'doif-react-uikit';
+/** @jsx jsx */
+import { jsx, css } from '@emotion/core';
 import { GlobalStyle } from './GlobalStyle';
+import './App.css';
+import FormTest from './components/FormTest';
+import 'doif-react-uikit/dist/datepicker.css';
 
 function App() {
-  const [visible, setVisible] = useState(false);
-  const onCancel = () => {
-    setVisible(false);
-  };
-
-  const onDialogVisible = () => {
-    setVisible(true);
-  };
-
   return (
-    <div>
+    <div css={containerStyle}>
       <GlobalStyle />
-      <ButtonGroup>
-        <Button onClick={onDialogVisible}>
-          <Icon icon="heart" /> LIKE
-        </Button>
-        <Button disabled>
-          <Icon icon="exit" /> LIKE
-        </Button>
-        <Button theme="secondary">
-          <Icon icon="pencil" /> LIKE
-        </Button>
-        <Button disabled theme="secondary">
-          <Icon icon="exit" /> LIKE
-        </Button>
-        <Button>svg가 왜 깨질까요?</Button>
-      </ButtonGroup>
-      <Icon icon="heart" color="red" />
-      <Icon icon="exit" />
-      <Icon icon="pencil" />
-      <Dialog
-        visible={visible}
-        title="취소 버튼을 클릭해 보세요"
-        cancellable
-        onCancel={onCancel}
-      />
+      <FormTest />
     </div>
   );
 }
+
+const containerStyle = css`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 export default App;
