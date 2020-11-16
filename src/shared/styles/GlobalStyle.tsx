@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { Global, css, jsx } from '@emotion/core';
-import palette from './styles/palette';
+import { Global, css, jsx } from "@emotion/core";
+import palette from "./palette";
 
 export const GlobalStyle = () => (
   <Global
