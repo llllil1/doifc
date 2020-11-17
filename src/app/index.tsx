@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
-import { GlobalStyle } from "../shared/styles/GlobalStyle";
 import "doif-react-uikit/dist/datepicker.css";
 import Top from "./top";
 import Middle from "./middle";
@@ -33,7 +32,6 @@ const sideData: PMenuData[] = [
 function App() {
     return (
         <div css={containerStyle}>
-            <GlobalStyle />
             <Top />
             <Side datas={sideData} />
             <Middle />
