@@ -1,11 +1,17 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
 import "doif-react-uikit/dist/datepicker.css";
-import Top from "./top";
-import Middle from "./middle";
-import Bottom from "./bottom";
-import Side from "./side";
-import { PMenuData } from "./side/types/Types";
+
+import { PMenuData } from "./aside/types/Types";
+import Aside from "./aside/Aside";
+import Footer from "./footer/Fotter";
+import Header from "./header/Header";
+import Main from "./main/Main";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { aSideVisible } from "../shared/status/Status";
+import styled from "@emotion/styled";
+import { Visible } from "../shared/types/Types";
+import palette from "../shared/styles/palette";
 
 const sideData: PMenuData[] = [
     {
@@ -29,21 +35,38 @@ const sideData: PMenuData[] = [
         ],
     },
 ];
+
+const Container = styled.div<Visible>`
+    display: flex;
+
+    height: 100%;
+    @media (min-width: 0px) {
+        flex-direction: column;
+    }
+    @media (min-width: 720px) {
+        flex-direction: row;
+    }
+`;
+
+const Content = styled.div`
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+`;
+
 function App() {
+    const visible = useRecoilValue(aSideVisible);
     return (
-        <div css={containerStyle}>
-            <Top />
-            <Side datas={sideData} />
-            <Middle />
-            <Bottom />
-        </div>
+        <Container visible={visible}>
+            <Aside datas={sideData} />
+            <Content>
+                <Header />
+                <Main />
+                <Footer />
+            </Content>
+        </Container>
     );
 }
-
-const containerStyle = css`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-`;
 
 export default App;

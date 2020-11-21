@@ -2,13 +2,16 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
-import { BrowserRouter } from "react-router-dom";
 import Router from "./api/Router";
+import { BrowserRouter } from "react-router-dom";
+import { RecoilRoot } from "recoil";
 ReactDOM.render(
-  <BrowserRouter>
-    <Router />
-  </BrowserRouter>,
-  document.getElementById("root")
+    <BrowserRouter>
+        <RecoilRoot>
+            <Router />
+        </RecoilRoot>
+    </BrowserRouter>,
+    document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change
