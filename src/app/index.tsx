@@ -50,6 +50,7 @@ const Container = styled.div<Visible>`
 
 const Content = styled.div`
     display: flex;
+    position: relative;
     flex-direction: column;
     height: 100%;
     width: 100%;

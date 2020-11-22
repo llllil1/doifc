@@ -1,6 +1,7 @@
+/** @jsx jsx */
+import { jsx } from "@emotion/core";
 import styled from "@emotion/styled";
 import { Icon } from "doif-react-uikit";
-import React from "react";
 import palette from "../../shared/styles/palette";
 const HeaderBox = styled.div`
     height: 64px;
@@ -11,6 +12,7 @@ const HeaderBox = styled.div`
 `;
 const UserInfo = styled.div`
     flex-shrink: 0;
+    margin-right: 10px;
 `;
 
 const Setting = styled.div`
