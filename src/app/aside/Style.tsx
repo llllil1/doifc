@@ -7,7 +7,7 @@ import { Visible } from "../../shared/types/Types";
 export const AsideBox = styled.div<Visible>`
     transition: all 0.3s;
     background-color: ${palette.gray[9]};
-
+    z-index: 1;
     @media (min-width: 0px) {
         ${(props) =>
             props.visible
